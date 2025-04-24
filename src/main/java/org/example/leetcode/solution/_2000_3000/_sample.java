@@ -1,13 +1,23 @@
 package org.example.leetcode.solution._2000_3000;
 
-class _sample {
-    public static void main(String[] args) {
-        var solution = new _sample();
+import org.example.leetcode.solution.dictionaries.TestCase;
+import org.example.leetcode.solution.dictionaries.Utils;
 
-        System.out.println(solution.sample());
+import java.util.*;
+
+public class _sample {
+    public static void main(String[] args) {
+
+        List<TestCase> testCases = List.of(
+                new TestCase("expected_result", "param1", "param2")
+        );
+
+        Utils.executeMethod("method_name", testCases);
+
     }
 
-    public int sample() {
-        return 0;
+    public String method_name(String incoming_param1, String incoming_param2) {
+//        logic here
+        return "expected_result";
     }
 }

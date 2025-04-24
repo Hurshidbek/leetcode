@@ -3,10 +3,7 @@ package org.example.leetcode.solution.dictionaries;
 import org.springframework.util.StringUtils;
 
 import java.lang.reflect.Method;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Utils {
 
@@ -103,12 +100,32 @@ public class Utils {
                     params);
 
             if (Utils.castToType(testCase.getResult()).equals(result)) {
-                System.out.println(true);
+                System.out.println(true + printParams(testCase.getParams()));
+                ;
             } else {
-                System.out.println("false -> " + result); // todo sout
+                System.out.println(false + " -> " + result + printParams(testCase.getParams())); // todo sout
             }
 
         }
+    }
+
+    public static String printParams(List<Object> params) {
+        StringBuilder sb = new StringBuilder("\t(");
+        for (Object obj : params) {
+
+            Class type = toWrapper(findType(obj));
+            if (String.class.equals(type) || Integer.class.equals(type) || Double.class.equals(type) || Character.class.equals(type) || Long.class.equals(type) || Boolean.class.equals(type)) {
+                sb.append(obj.toString());
+            } else if (Map.class.equals(type) || Set.class.equals(type)) {
+            } else if (int[].class.equals(type)) {
+                sb.append(Arrays.toString((int[]) obj));
+            }
+
+            sb.append(" || ");
+        }
+        if (sb.length() > 1) sb = new StringBuilder(sb.substring(0, sb.length() - 4));
+        return sb.append(")").toString();
+
     }
 
     public static Object invokeMethod(String className, String methodName, Class<?>[] paramTypes, Object[] params) {

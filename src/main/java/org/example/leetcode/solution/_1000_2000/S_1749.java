@@ -5,7 +5,7 @@ import org.example.leetcode.solution.dictionaries.TreeNode;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-class S_1749 {
+public class S_1749 {
     public static void main(String[] args) {
         var solution = new S_1749();
 

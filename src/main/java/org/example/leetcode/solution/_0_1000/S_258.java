@@ -1,6 +1,6 @@
 package org.example.leetcode.solution._0_1000;
 
-class S_258 {
+public class S_258 {
     public static void main(String[] args) {
         var solution = new S_258();
 

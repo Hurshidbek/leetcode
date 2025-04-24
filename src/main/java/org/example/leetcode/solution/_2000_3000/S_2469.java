@@ -1,6 +1,6 @@
 package org.example.leetcode.solution._2000_3000;
 
-class S_2469 {
+public class S_2469 {
     public static void main(String[] args) {
         var solution = new S_2469();
         solution.convertTemperature(36.50);

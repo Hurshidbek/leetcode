@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-class S_2578 {
+public class S_2578 {
     public static void main(String[] args) {
         var solution = new S_2578();
 

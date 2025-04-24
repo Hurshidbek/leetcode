@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-class S_3289 {
+public class S_3289 {
     public static void main(String[] args) {
         var solution = new S_3289();
         System.out.println(Arrays.toString(solution.getSneakyNumbers(new int[]{7, 1, 5, 4, 3, 4, 6, 0, 9, 5, 8, 2})));

@@ -7,7 +7,7 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Deque;
 
-class S_1561 {
+public class S_1561 {
     public static void main(String[] args) {
         var solution = new S_1561();
 

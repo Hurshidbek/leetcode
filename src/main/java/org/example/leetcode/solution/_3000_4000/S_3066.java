@@ -2,7 +2,7 @@ package org.example.leetcode.solution._3000_4000;
 
 import java.util.PriorityQueue;
 
-class S_3066 {
+public class S_3066 {
     public static void main(String[] args) {
         var solution = new S_3066();
 

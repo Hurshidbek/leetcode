@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-class S_3248 {
+public class S_3248 {
     public static void main(String[] args) {
         var solution = new S_3248();
 

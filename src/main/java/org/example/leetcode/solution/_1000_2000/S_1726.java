@@ -3,7 +3,7 @@ package org.example.leetcode.solution._1000_2000;
 import java.util.HashMap;
 import java.util.Map;
 
-class S_1726 {
+public class S_1726 {
     public static void main(String[] args) {
         var solution = new S_1726();
 

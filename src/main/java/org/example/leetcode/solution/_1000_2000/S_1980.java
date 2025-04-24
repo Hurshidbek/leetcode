@@ -4,7 +4,7 @@ import org.example.leetcode.solution.dictionaries.TreeNode;
 
 import java.util.Arrays;
 
-class S_1980 {
+public class S_1980 {
     public static void main(String[] args) {
         var solution = new S_1980();
 

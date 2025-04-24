@@ -18,12 +18,13 @@ public class S_746 {
 
         for (int[] nums : list) solution.minCostClimbingStairs(nums);
     }
+
     public int minCostClimbingStairs(int[] cost) {
-        for(int i = 2; i < cost.length; i++){
-            if (cost[i-1] >= cost[i-2]){
-                cost[i] += cost[i-2];
-            }else {
-                cost[i] += cost[i-1];
+        for (int i = 2; i < cost.length; i++) {
+            if (cost[i - 1] >= cost[i - 2]) {
+                cost[i] += cost[i - 2];
+            } else {
+                cost[i] += cost[i - 1];
             }
         }
 

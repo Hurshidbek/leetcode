@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-class S_2807 {
+public class S_2807 {
 
     public static void main(String[] args) {
         var solution = new S_2807();

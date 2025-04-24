@@ -6,7 +6,7 @@ import org.example.leetcode.solution.dictionaries.TreeNode;
 
 import java.util.*;
 
-class S_1261 {
+public class S_1261 {
     public static void main(String[] args) {
         List<TreeNode> nodes = List.of(
                 TreeNode.generateTreeNode(Arrays.asList(-1, null, -1)),

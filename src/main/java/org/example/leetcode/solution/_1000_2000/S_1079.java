@@ -2,7 +2,7 @@ package org.example.leetcode.solution._1000_2000;
 
 import java.util.*;
 
-class S_1079 {
+public class S_1079 {
 
     public static void main(String[] args) {
         String tiles = "112223";

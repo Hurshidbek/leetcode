@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-class S_2161 {
+public class S_2161 {
     public static void main(String[] args) {
         var solution = new S_2161();
 

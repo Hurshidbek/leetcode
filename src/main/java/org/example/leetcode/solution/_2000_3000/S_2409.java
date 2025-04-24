@@ -1,6 +1,6 @@
 package org.example.leetcode.solution._2000_3000;
 
-class S_2409 {
+public class S_2409 {
     public static void main(String[] args) {
         var solution = new S_2409();
         solution.countDaysTogether("10-01", "10-31", "11-01", "12-31");

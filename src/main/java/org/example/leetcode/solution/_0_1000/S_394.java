@@ -2,7 +2,7 @@ package org.example.leetcode.solution._0_1000;
 
 import java.util.Stack;
 
-class S_394 {
+public class S_394 {
     public static void main(String[] args) {
         var solution = new S_394();
 

@@ -5,7 +5,7 @@ import org.example.leetcode.solution.dictionaries.TreeNode;
 
 import java.util.*;
 
-class S_1028 {
+public class S_1028 {
     public static void main(String[] args) {
         var solution = new S_1028();
 

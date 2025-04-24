@@ -3,7 +3,7 @@ package org.example.leetcode.solution._0_1000;
 import java.util.LinkedList;
 import java.util.List;
 
-class S_60 {
+public class S_60 {
     public static void main(String[] args) {
         var solution = new S_60();
 

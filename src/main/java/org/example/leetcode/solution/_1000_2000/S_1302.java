@@ -2,7 +2,7 @@ package org.example.leetcode.solution._1000_2000;
 
 import org.example.leetcode.solution.dictionaries.TreeNode;
 
-class S_1302 {
+public class S_1302 {
     public static void main(String[] args) {
         var solution = new S_1302();
 

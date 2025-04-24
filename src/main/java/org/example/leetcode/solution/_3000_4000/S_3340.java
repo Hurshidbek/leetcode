@@ -2,7 +2,7 @@ package org.example.leetcode.solution._3000_4000;
 
 import java.util.stream.IntStream;
 
-class S_3340 {
+public class S_3340 {
     public static void main(String[] args) {
         var solution = new S_3340();
         System.out.println(solution.isBalanced("24123"));

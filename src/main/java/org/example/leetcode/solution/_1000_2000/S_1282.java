@@ -2,7 +2,7 @@ package org.example.leetcode.solution._1000_2000;
 
 import java.util.*;
 
-class S_1282 {
+public class S_1282 {
     public static void main(String[] args) {
         var solution = new S_1282();
 

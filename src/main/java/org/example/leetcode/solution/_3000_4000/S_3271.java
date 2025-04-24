@@ -1,6 +1,6 @@
 package org.example.leetcode.solution._3000_4000;
 
-class S_3271 {
+public class S_3271 {
     public static void main(String[] args) {
         var solution = new S_3271();
         System.out.println(solution.stringHash("abcd", 2).equals("bf"));

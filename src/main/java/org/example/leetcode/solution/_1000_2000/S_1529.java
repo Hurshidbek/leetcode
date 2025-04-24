@@ -3,7 +3,7 @@ package org.example.leetcode.solution._1000_2000;
 
 import java.util.Arrays;
 
-class S_1529 {
+public class S_1529 {
     public static void main(String[] args) {
         var solution = new S_1529();
 

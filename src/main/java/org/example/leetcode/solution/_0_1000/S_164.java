@@ -2,7 +2,7 @@ package org.example.leetcode.solution._0_1000;
 
 import java.util.Arrays;
 
-class S_164 {
+public class S_164 {
 
 
     public static void main(String[] args) {

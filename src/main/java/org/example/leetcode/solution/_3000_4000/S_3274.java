@@ -1,6 +1,6 @@
 package org.example.leetcode.solution._3000_4000;
 
-class S_3274 {
+public class S_3274 {
     public static void main(String[] args) {
         var solution = new S_3274();
         System.out.println(!solution.checkTwoChessboards("a1", "h3"));

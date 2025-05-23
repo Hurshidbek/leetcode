@@ -37,4 +37,19 @@ public class ListNode {
         System.out.print(root.val + " ");
         printNode(root.next);
     }
+
+    public static String toString(ListNode root) {
+        StringBuilder sb = new StringBuilder();
+        toStringHelper(root, sb);
+        return sb.toString();
+    }
+    public static void toStringHelper(ListNode root, StringBuilder sb) {
+        if (root == null) {
+            sb.append(".-");
+            return;
+        }
+        sb.append(root.val).append("-");
+
+        toStringHelper(root.next, sb);
+    }
 }

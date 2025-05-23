@@ -69,5 +69,20 @@ public class TreeNode {
         printTreeNode(root.left);
         printTreeNode(root.right);
     }
+    public static String toString(TreeNode root) {
+        StringBuilder sb = new StringBuilder();
+        toStringHelper(root, sb);
+        return sb.toString();
+    }
+    public static void toStringHelper(TreeNode root, StringBuilder sb) {
+        if (root == null) {
+            sb.append(".-");
+            return;
+        }
+        sb.append(root.val).append("-");
+
+        toStringHelper(root.left, sb);
+        toStringHelper(root.right, sb);
+    }
 
 }

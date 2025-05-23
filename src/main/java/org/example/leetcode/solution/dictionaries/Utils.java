@@ -99,14 +99,40 @@ public class Utils {
                     paramTypes,
                     params);
 
-            if (Utils.castToType(testCase.getResult()).equals(result)) {
+            if (equals(Utils.castToType(testCase.getResult()), result)) {
                 System.out.println(true + printParams(testCase.getParams()));
                 ;
             } else {
-                System.out.println(false + " -> " + result + printParams(testCase.getParams())); // todo sout
+                System.out.println(false + " -> " + printResult(result) + printParams(testCase.getParams())); // todo sout
             }
 
         }
+    }
+
+    public static String printResult(Object obj) {
+        StringBuilder sb = new StringBuilder("");
+
+        Class type = toWrapper(findType(obj));
+        if (String.class.equals(type)
+                || Integer.class.equals(type)
+                || Double.class.equals(type)
+                || Character.class.equals(type)
+                || Long.class.equals(type)
+                || Boolean.class.equals(type)
+                || List.class.equals(type)
+                || Map.class.equals(type)
+                || Set.class.equals(type)
+        ) {
+            sb.append(obj.toString());
+        } else if (int[].class.equals(type)
+                || String[].class.equals(type)) {
+            sb.append(Arrays.toString((Object[]) obj));
+        } else if (TreeNode.class.equals(type)) {
+            sb.append(TreeNode.toString((TreeNode) obj));
+        } else if (ListNode.class.equals(type)) {
+            sb.append(ListNode.toString((ListNode) obj));
+        }
+        return sb.toString();
     }
 
     public static String printParams(List<Object> params) {
@@ -114,11 +140,23 @@ public class Utils {
         for (Object obj : params) {
 
             Class type = toWrapper(findType(obj));
-            if (String.class.equals(type) || Integer.class.equals(type) || Double.class.equals(type) || Character.class.equals(type) || Long.class.equals(type) || Boolean.class.equals(type)) {
+            if (String.class.equals(type)
+                    || Integer.class.equals(type)
+                    || Double.class.equals(type)
+                    || Character.class.equals(type)
+                    || Long.class.equals(type)
+                    || Boolean.class.equals(type)
+                    || List.class.equals(type)
+                    || Map.class.equals(type)
+                    || Set.class.equals(type)
+            ) {
                 sb.append(obj.toString());
-            } else if (Map.class.equals(type) || Set.class.equals(type)) {
             } else if (int[].class.equals(type)) {
                 sb.append(Arrays.toString((int[]) obj));
+            } else if (TreeNode.class.equals(type)) {
+                sb.append(TreeNode.toString((TreeNode) obj));
+            } else if (ListNode.class.equals(type)) {
+                sb.append(ListNode.toString((ListNode) obj));
             }
 
             sb.append(" || ");
@@ -128,6 +166,17 @@ public class Utils {
 
     }
 
+    public static Boolean equals(Object obj1, Object obj2) {
+        if (obj1 == obj2) return true;
+        if (obj1 == null || obj2 == null) return false;
+
+        if (obj1 instanceof Number && obj2 instanceof Number) {
+            return ((Number) obj1).longValue() == ((Number) obj2).longValue();
+        }
+
+        return obj1.equals(obj2);
+    }
+
     public static Object invokeMethod(String className, String methodName, Class<?>[] paramTypes, Object[] params) {
         try {
             // Class instance
@@ -135,13 +184,32 @@ public class Utils {
             Object instance = clazz.getDeclaredConstructor().newInstance();
 
             // Method0
+//            Method method = null;
+//            for (Method declaredMethod : clazz.getDeclaredMethods()) {
+//                if (declaredMethod.getName().equals(methodName)
+//                        && declaredMethod.getParameterCount() == paramTypes.length) {
+//                    for (int i = 0; i < declaredMethod.getParameterTypes().length; i++) {
+//                        if (){
+//
+//                        }
+//                    }
+//                    ;
+//                    System.out.println();
+//                    method = clazz.getDeclaredMethod(methodName, paramTypes);
+//                }
+//            }
+//            assert method != null;
+
             Method method = clazz.getDeclaredMethod(methodName, paramTypes);
             method.setAccessible(true); // if method is private
 
             // Invoke
             return method.invoke(instance, params);
-        } catch (Exception e) {
-            throw new RuntimeException("Reflection invocation failed: " + e.getMessage(), e);
+        } catch (NoSuchMethodException ex) {
+            System.out.println();
+            throw new RuntimeException("Reflection invocation failed: " + ex.getMessage(), ex);
+        } catch (Exception ex) {
+            throw new RuntimeException("Reflection invocation failed: " + ex.getMessage(), ex);
         }
     }
 
@@ -177,12 +245,18 @@ public class Utils {
             return Boolean.class;
         } else if (obj instanceof int[]) {
             return int[].class;
+        } else if (obj instanceof String[]) {
+            return String[].class;
         } else if (obj instanceof List<?>) {
             return List.class;
         } else if (obj instanceof Map<?, ?>) {
             return Map.class;
         } else if (obj instanceof Set<?>) {
             return Set.class;
+        } else if (obj instanceof TreeNode) {
+            return TreeNode.class;
+        } else if (obj instanceof ListNode) {
+            return ListNode.class;
         } else {
             throw new ClassCastException("Can't cast " + obj.getClass() + " to " + obj);
         }

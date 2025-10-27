@@ -10,6 +10,43 @@ public class S_1652 {
     }
 
     public int[] decrypt(int[] code, int k) {
+
+        int n = code.length;
+
+        if (k == 0) return new int[n];
+
+        int arr[] = new int[2 * n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = code[i];
+            arr[i + n] = code[i];
+        }
+
+        int preSum = 0;
+        int[] preSumArr = new int[2 * n];
+
+        for (int i = 0; i < 2 * n; i++) {
+            preSum += arr[i];
+            preSumArr[i] = preSum;
+        }
+
+        int ans[] = new int[n];
+
+        if (k > 0) {
+            for (int i = 0; i < n; i++) {
+                ans[i] = preSumArr[i + k] - preSumArr[i];
+            }
+        } else {
+            k = Math.abs(k);
+            for (int i = n; i < 2 * n; i++) {
+                ans[i - n] = preSumArr[i - 1] - preSumArr[i - k - 1];
+            }
+        }
+
+        return ans;
+    }
+
+    public int[] decrypt2(int[] code, int k) {
         int len = code.length;
         int[] res = new int[len];
 

@@ -62,7 +62,7 @@ public class TreeNode {
     // Print tree in pre-order (for debugging)
     public static void printTreeNode(TreeNode root) {
         if (root == null) {
-            System.out.print("null-");
+//            System.out.print("null-");
             return;
         }
         System.out.print(root.val + "-");

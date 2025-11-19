@@ -1,12 +1,10 @@
 package org.example.leetcode.solution._0_1000;
 
-import java.util.Arrays;
-
 public class _samplev1 {
     public static void main(String[] args) {
-        var solution = new _samplev1();
+        var question = new _samplev1();
 
-        System.out.println(solution.method());
+        System.out.println(question.method());
     }
 
     public double method() {

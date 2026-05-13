@@ -69,6 +69,15 @@ public class TreeNode {
         printTreeNode(root.left);
         printTreeNode(root.right);
     }
+    public static String toString(List<TreeNode> root) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        for(TreeNode node: root){
+            toStringHelper(node, sb);
+        }
+        sb.append("]");
+        return sb.toString();
+    }
     public static String toString(TreeNode root) {
         StringBuilder sb = new StringBuilder();
         toStringHelper(root, sb);

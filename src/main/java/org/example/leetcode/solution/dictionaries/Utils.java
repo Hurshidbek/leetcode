@@ -286,4 +286,122 @@ public class Utils {
         }
     }
 
+    public static void print(String str) {
+        System.out.println(str);
+    }
+
+    public static void print(Boolean bool) {
+        System.out.println(bool);
+    }
+
+    public static void print(Number number) {
+        System.out.println(number);
+    }
+
+    public static void print(List<Integer> list) {
+        StringBuilder sb = new StringBuilder("[");
+        for (int i = 0; i < list.size(); i++) {
+            sb.append(list.get(i));
+            if (i < list.size() - 1) {
+                sb.append(", ");
+            }
+        }
+        System.out.println(sb.append("]"));
+    }
+
+    public static void printDoubleList(List<List<Integer>> doubleList) {
+        StringBuilder sb = new StringBuilder("[");
+        for(List<Integer> list: doubleList){
+            sb.append("[");
+            for (int i = 0; i < list.size(); i++) {
+                sb.append(list.get(i));
+                if (i < list.size() - 1) {
+                    sb.append(", ");
+                }
+            }
+            sb.append("]");
+        }
+        System.out.println(sb.append("]"));
+    }
+
+    public static void print(int[] arr) {
+        StringBuilder sb = new StringBuilder("[");
+        for (int i = 0; i < arr.length; i++) {
+            sb.append(arr[i]);
+            if (i < arr.length - 1) {
+                sb.append(", ");
+            }
+        }
+        sb.append("]");
+        System.out.println(sb);
+    }
+
+    public static void print(int[][] mat) {
+        StringBuilder sb = new StringBuilder("[");
+
+        for (int i = 0; i < mat.length; i++) {
+            sb.append("[");
+
+            for (int j = 0; j < mat[i].length; j++) {
+                sb.append(mat[i][j]);
+                if (j < mat[i].length - 1) {
+                    sb.append(", ");
+                }
+            }
+
+            sb.append("]");
+
+            if (i < mat.length - 1) {
+                sb.append(", ");
+            }
+        }
+
+        sb.append("]");
+        System.out.println(sb);
+    }
+
+    public static void print(ListNode node) {
+        StringBuilder sb = new StringBuilder("[");
+        while (node != null) {
+            sb.append(node.val);
+            if (node.next != null) {
+                sb.append(",");
+            }
+            node = node.next;
+        }
+        sb.append("]");
+        System.out.println(sb);
+    }
+
+    public static void print(ListNode[] nodes) {
+        if (isEmpty(nodes)) return;
+        StringBuilder sb = new StringBuilder("[");
+        for (int i = 0; i < nodes.length; i++) {
+            sb.append("[");
+            while (nodes[i] != null) {
+                sb.append(nodes[i].val);
+                if (nodes[i].next != null) {
+                    sb.append(",");
+                }
+                nodes[i] = nodes[i].next;
+            }
+            sb.append("]");
+            if (i < nodes.length - 1) {
+                sb.append(",");
+            }
+        }
+        sb.append("]");
+        System.out.println(sb);
+    }
+
+    private boolean isPrime(int num) {
+        if (num < 2) return false;
+        if (num == 2 || num == 3) return true;
+        if (num % 2 == 0 || num % 3 == 0) return false;
+
+        for (int i = 5; i * i <= num; i += 6) {
+            if (num % i == 0 || num % (i + 2) == 0) return false;
+        }
+        return true;
+    }
 }

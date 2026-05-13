@@ -2,10 +2,7 @@ package org.example.leetcode.solution.learn;
 
 public class Fibonacci {
     public static void main(String[] args) {
-        for (int i = 1; i <= 20; i++) {
-            int fibonacci = fibonacci(i);
-            System.out.println(i + ": " + fibonacci);
-        }
+        System.out.println(fibonacci(8));
     }
 
 
